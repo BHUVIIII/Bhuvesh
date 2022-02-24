@@ -6,7 +6,7 @@ spring:
       routes:
         - uri: http://localhost:8081/
           predicates:
-            - path=/students/**
+            - Path=/students/**
          - uri: http://localhost:8082/
           predicates:
-            - path=/students/**
+            - Path=/students/**
