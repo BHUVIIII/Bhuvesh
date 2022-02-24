@@ -5,4 +5,9 @@ spring:
   cloud:
     gateway:
       routes:
-      -uri: "http://localhost:
+      - uri: http://localhost:8081
+        predicates:
+        - path=/students/**
+      - uri: http://localhost:8081
+        predicates:
+        - path=/students/**
