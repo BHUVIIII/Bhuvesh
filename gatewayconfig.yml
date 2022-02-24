@@ -8,6 +8,6 @@ spring:
       - uri: http://localhost:8081
         predicates:
         - path=/students/**
-      - uri: http://localhost:8081
+      - uri: http://localhost:8082
         predicates:
         - path=/students/**
