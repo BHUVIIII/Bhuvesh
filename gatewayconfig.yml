@@ -9,4 +9,4 @@ spring:
         - Path=/students/**
       - uri: http://localhost:8082/
         predicates:
-        - Path=/students/**
+        - Path=/v2/students/**
