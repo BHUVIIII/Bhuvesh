@@ -7,6 +7,23 @@ spring:
       - uri: http://localhost:8081/
         predicates:
         - Path=/students/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: Student-Service
+              fallbackuri: forward:/studentServiceFallBackMethod
       - uri: http://localhost:8082/
         predicates:
         - Path=/v2/students/**
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 4000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
