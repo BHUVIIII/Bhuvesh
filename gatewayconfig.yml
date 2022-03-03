@@ -10,11 +10,16 @@ spring:
         filters:
           - name: CircuitBreaker
             args:
-              name: Student-Service
-              fallbackuri: forward:/studentServiceFallBackMethod
+              name: Project1
+              fallbackuri: forward:/project1FallBackMethod
       - uri: http://localhost:8082/
         predicates:
         - Path=/v2/students/**
+        filters:
+          - name: CircuitBreaker
+            args:
+              name: Project2
+              fallbackuri: forward:/project2FallBackMethod
 hystrix:
   command:
     fallbackcmd:
